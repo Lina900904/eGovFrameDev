@@ -50,14 +50,13 @@ PASSWORD <input type="text" name = "password" required><br />
 <script>
 $('#joinFormBtn').click(function() {
 	
-}() {
 	alert('joinFormBtn click');
 	/*var form = document.getElementById('join-Form');
 	form.action = app.x() + "/member/add"
 	form.method = "POST"*/
 	$('#join-Form')
 	.attr({
-		action : app.x()+"/member/add",
+		action : "${context}/member/add",
 		method : "POST"
 		
 	})

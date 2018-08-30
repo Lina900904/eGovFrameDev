@@ -27,15 +27,15 @@ import com.sun.istack.internal.logging.Logger;
 @SessionAttributes("user")
 public class MemberController {
 	//static final Logger Logger = LoggerFactory.getLogger();
-	@Autowired ArticleDTO article;
+	@Autowired MemberDTO member;
 	@Autowired MemberService memberService;
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public String add(@ModelAttribute MemberDTO member, Model model) {
-		memberService.add(member);
+		
+		//model.addAllAttributes("member",memberService.add(member));
 		System.out.println("member is "+ member);
 		return "redirect:/move/auth/member/login";
 	}
-	
 	@RequestMapping("/list")
 	public void list() {}
 	@RequestMapping("/search")

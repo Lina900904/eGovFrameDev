@@ -68,7 +68,7 @@
 $('#updateFormBtn').click(function() {
 	alert("updateFormBtn click")
 	$('#update-Form').attr({
-		action : app.x()+"/member/modify",
+		action : "${context}/member/modify",
 		method: "POST",
 			
 	})

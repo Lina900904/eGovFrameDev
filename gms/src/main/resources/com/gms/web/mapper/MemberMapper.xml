@@ -10,11 +10,11 @@
 		${userid} -> userid
 		#은 ' '와 같다 -->
 	</select>
-	<select id="login" resultType="java.lang.String">
+	<select id="login" resultType="string">
 	SELECT COUNT(*) FROM MEMBER WHERE ID LIKE #{id} AND PASSWORD LIKE #{password};
 
 	</select>
-	<insert id="add" parameterType="com.gms.web.domain.MemberDTO">
+	<insert id="insert" parameterType="com.gms.web.domain.MemberDTO">
 		INSERT INTO MEMBER
 		( ID, PASSWORD,
 		SSN, NAME, GENDER, ROLL, TEAMID, AGE )

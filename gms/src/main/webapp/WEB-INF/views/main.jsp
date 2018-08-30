@@ -5,14 +5,14 @@
 <head>
     <title>Main</title>
 <%--      <link rel="shortcut icon" href="${context}/resources/img/favicon.ico" />  --%>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+ <link href="${context}/resources/other_resources/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+	<link href="${context}/resources/other_resources/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" /> 
+	
+    
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> -->
     <link rel="stylesheet" href="${context}/resources.style.css">
-
-
 
 
 <!-- Favicons
@@ -24,10 +24,14 @@
 <!-- Stylesheet
     ================================================== -->
 <link rel="stylesheet" type="text/css"  href="${context}/resources/css/style.css">
+
+
 <link rel="stylesheet" type="text/css" href="${context}/resources/css/nivo-lightbox/nivo-lightbox.css">
 <link rel="stylesheet" type="text/css" href="${context}/resources/css/nivo-lightbox/default.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-
+</head>
+</body>
+</html>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -132,6 +136,3 @@
     }); 
 </script>
  -->
-
-</body>
-</html>

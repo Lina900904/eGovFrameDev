@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.gms.web.domain.ArticleDTO;
 import com.gms.web.domain.MemberDTO;
-@Repository
+@Repository  //mapper는 mapperimpl이 없어서 
 public interface BoardMapper {
     public void insert(ArticleDTO m) ;
     public List<?> selectList(Map<?, ?> p) ;
@@ -17,5 +17,9 @@ public interface BoardMapper {
     public void update(Map<?, ?> p) ;
     public void delete(Map<?, ?> p) ;
     public String login(ArticleDTO m) ;
-    public int  countpage() ;
+    public int countPaging();
+	public int listSearchCount();
+	public ArticleDTO listCriteria();
+	public ArticleDTO listPage();
+	public List<ArticleDTO> listSearch();
 }
