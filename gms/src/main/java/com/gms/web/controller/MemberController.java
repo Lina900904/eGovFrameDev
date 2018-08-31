@@ -4,7 +4,6 @@ package com.gms.web.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.log4j.spi.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,25 +13,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.gms.web.domain.ArticleDTO;
 import com.gms.web.domain.MemberDTO;
-import com.gms.web.mapper.MemberMapper;
 import com.gms.web.service.MemberService;
-import com.sun.istack.internal.logging.Logger;
-
 
 
 @Controller
-@RequestMapping("/member")
-@SessionAttributes("user")
+@RequestMapping("/member") //root-context공간에 저장
+@SessionAttributes("user") //user란 세션공간
 public class MemberController {
 	//static final Logger Logger = LoggerFactory.getLogger();
 	@Autowired MemberDTO member;
 	@Autowired MemberService memberService;
 	@RequestMapping(value="/add", method=RequestMethod.POST)
-	public String add(@ModelAttribute MemberDTO member, Model model) {
-		
-		//model.addAllAttributes("member",memberService.add(member));
+	public String add(@ModelAttribute MemberDTO member) {
+		memberService.add(member);
 		System.out.println("member is "+ member);
 		return "redirect:/move/auth/member/login";
 	}
@@ -48,10 +42,10 @@ public class MemberController {
 	@RequestMapping("/count")
 	public void count() {}
 	@RequestMapping(value="/modify/id", method = RequestMethod.POST)
-	public void modify(@ModelAttribute MemberDTO member, @PathVariable String id ) {
+	public void modify(@ModelAttribute("member") MemberDTO member,@ModelAttribute("user") MemberDTO user) {
 		Map<String, Object> p = new HashMap<String, Object>();
-		member.setId(id);
-		System.out.println(id);
+		//member.setId(user);
+		System.out.println(user);
 		p.put("member",member);
 		
 		memberService.modify(p);

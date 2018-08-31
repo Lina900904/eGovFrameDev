@@ -18,7 +18,7 @@
 		INSERT INTO MEMBER
 		( ID, PASSWORD,
 		SSN, NAME, GENDER, ROLL, TEAMID, AGE )
-		VALUES ( #{roll}, #{password} ,
+		VALUES ( #{id}, #{password} ,
 		#{ssn} , #{name} , #{gender} , #{roll},
 		#{teamId} , #{age})
 	</insert>
