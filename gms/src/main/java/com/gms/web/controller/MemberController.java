@@ -30,49 +30,61 @@ public class MemberController {
 		System.out.println("member is "+ member);
 		return "redirect:/move/auth/member/login";
 	}
+	
+	@RequestMapping(value="/login", method = RequestMethod.POST)
+	public String login(Model model, 
+			@ModelAttribute("member") MemberDTO member) {
+		
+		String login ="";
+		if(memberService.login(member)) {
+			login =  "login__success";
+			model.addAttribute("user", memberService.retrieve(member));
+		}else {
+			 login =  "redirect:/move/auth/member/login";
+		}
+		System.out.println("login값~~"+member);
+		model.asMap().get("user");
+		return login;
+	}
+	
+	@RequestMapping("/retrieve")
+	public void retrieve(Model model,
+			@ModelAttribute("member") MemberDTO member) {
+		System.out.println("member값"+member);
+		
+		
+	}
+	@RequestMapping(value="/modify", method = RequestMethod.POST)
+	public String modify(Model model,
+			@ModelAttribute("member") MemberDTO member,
+			@ModelAttribute("user") MemberDTO user) {
+		member.setId(user.getId());
+		memberService.modify(member);
+		model.addAttribute("user", memberService.retrieve(member));
+		
+		System.out.println("modify member값"+member);
+		return "login__success";
+		
+	}
 	@RequestMapping("/list")
 	public void list() {}
 	@RequestMapping("/search")
 	public void serarch() {}
-	@RequestMapping("/retrieve")
-	public void retrieve(@ModelAttribute MemberDTO member, Model model) {
-		System.out.println("member값"+member);
-		model.addAttribute("member",memberService.retrieve(member));
-	}
+	
 	@RequestMapping("/count")
 	public void count() {}
-	@RequestMapping(value="/modify/id", method = RequestMethod.POST)
-	public void modify(@ModelAttribute("member") MemberDTO member,@ModelAttribute("user") MemberDTO user) {
-		Map<String, Object> p = new HashMap<String, Object>();
-		//member.setId(user);
-		System.out.println(user);
-		p.put("member",member);
-		
-		memberService.modify(p);
-		System.out.println("modify member값"+member);
-		
-	}
+	
 	@RequestMapping(value="/remove", method = RequestMethod.POST)
-	public void remove(@ModelAttribute MemberDTO member, Model model) {
-		
-		Map<String, Object> p = new HashMap<String, Object>();
-		p.put("member",member);
-		memberService.remove(p);
+	public String remove( Model model, 
+			@ModelAttribute MemberDTO member,
+			@ModelAttribute("user") MemberDTO user) {
+		member.setId(user.getId());
+		memberService.remove(member);
 		System.out.println("remove member값"+member);
+		return "redirect:/";
 		
 	}
-	@RequestMapping(value="/login", method = RequestMethod.POST)
-	public String login(@ModelAttribute MemberDTO member, Model model) {
-		String login ="";
-		if(memberService.login(member)) {
-			model.addAttribute("member",memberService.retrieve(member));
-			login =  "login__success";
-		}else {
-			 login =  "redirect:/move/auth/member/login";
-		}
-		System.out.println("login값~~"+login);
-		return login;
-	}
+	
 	@RequestMapping("/logout")
 	public String logout() {
 		return "redirect:/";

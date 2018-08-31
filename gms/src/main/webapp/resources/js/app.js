@@ -62,7 +62,7 @@ app = {
 		$('#deleteBtn').click(() => {
 			location.href = app.x() + '/move/auth/member/remove';
 		});*/
-		$('#deleteFormBtn').click(() => {
+/*		$('#deleteFormBtn').click(() => {
 			alert("deleteFormBtn click")
 			$('#deleteForm').attr({
 			
@@ -71,7 +71,7 @@ app = {
 					
 			})
 			.submit();
-		});
+		});*/
 		$('#mypageBut').click(() => {
 			
 			location.href = app.x() + '/member/retrieve'+user.get('id');
@@ -119,6 +119,3 @@ user.session= x=>{
 	alert(sessionStorage.getItem('id'));
 };
 
-user.get= x=>{
-	sessionStorage.getItem(x);
-}

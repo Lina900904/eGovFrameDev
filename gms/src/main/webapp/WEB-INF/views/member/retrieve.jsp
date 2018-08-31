@@ -10,39 +10,39 @@
 				<td id="mypage-img" rowspan="7" colspan="2" >
 				<img src="${img}/${profile}"/>
 				<td>아이디</td>
-				<td>${member.id}</td>
+				<td>${user.id}</td>
 				
 			</tr>
 			<tr>
 				
 				<td>이름</td>
-				<td>${member.name}</td>
+				<td>${user.name}</td>
 			</tr>
 			
 			<tr>
 				
 				<td>비밀번호</td>
-				<td>${member.password}</td>
+				<td>${user.password}</td>
 			</tr>
 			<tr>
 				<td>나이</td>
-				<td>${member.age}</td>
+				<td>${user.age}</td>
 			</tr>
 			
 			<tr>
 				<td>성별</td>
-				<td>${member.gender}</td>
+				<td>${user.gender}</td>
 			</tr>
 			
 			<tr>
 				<td>역할</td>
-				<td>${member.roll}</td>
+				<td>${user.roll}</td>
 				
 			</tr>
 			
 			<tr>
 				<td>팀아이디</td>
-				<td>${member.teamId}</td>
+				<td>${user.teamId}</td>
 			</tr>
 
 		</table>

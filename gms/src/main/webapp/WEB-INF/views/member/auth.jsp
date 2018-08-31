@@ -20,9 +20,10 @@
 			<ul class="nav navbar-nav navbar-right">
 
 				<li id="mypageBut"><a class="page-scroll"> 
-				<input type="hidden" id="session"  />${member.id} 마이페이지
-				</a></li>
-				
+				${user.name} 로그인 중 </a></li>
+				<li><input type="hidden" id="session"  /></li>
+					<li id="mypage"><a class="page-scroll"> 
+				mypage </a></li>
 				<li id="loginBut"><a class="page-scroll">Logout</a></li>
 				<li><a id="board_write">게시글쓰기</a></li>
 				<li><a id="board_list">게시글목록</a></li>
@@ -32,12 +33,14 @@
 	</div>
 </div>
 <script>
-	user.session({
-		id : '${member.id}',
-		name : '${member.name}',
-		gender : '${member.gender}',
-		age : '${member.age}',
-		roll : '${member.roll}',
-		teamId : '${member.teamId}'
+
+	
+	$('#mypage').click(function () {
+		alert("마이페이지버튼");
+	
+		location.href = '${context}/move/auth/member/retrieve';
+	
 	});
-</script>
+	</script>
+
+

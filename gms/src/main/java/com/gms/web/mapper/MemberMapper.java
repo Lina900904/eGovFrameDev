@@ -13,8 +13,8 @@ public interface MemberMapper {
     public List<?> selectSome(Map<?, ?> p) ;
     public MemberDTO selectOne(MemberDTO m) ;
     public int count(Map<?, ?> p) ;
-    public void update(Map<?, ?> p) ;
-    public void delete(Map<?, ?> p) ;
+    public void update(MemberDTO p) ;
+    public void delete(MemberDTO p) ;
     public String login(MemberDTO m) ;
     public int  countpage() ;
 }

@@ -30,10 +30,10 @@
 
 	<update id="update" parameterType="com.gms.web.domain.MemberDTO">
 		UPDATE MEMBER
-		SET PASSWORD LIKE #{password},
-		TEAMID LIKE #{teamId},
-		ROLL LIKE #{roll}
-		WHERE ID LIKE #{id}
+		SET PASSWORD = #{password},
+		TEAMID = #{teamId},
+		ROLL = #{roll}
+		WHERE ID = #{id}
 	</update>
 
 </mapper>

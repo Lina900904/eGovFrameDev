@@ -10,7 +10,7 @@
 				<td id="mypage-img" rowspan="7" colspan="2"><img
 					src="resources/img/home/turtle.PNG" />
 				<td>아이디</td>
-				<td>${member.name}</td>
+				<td>${user.name}</td>
 			</tr>
 			<tr>
 				<td>새비밀번호</td>
@@ -18,12 +18,12 @@
 			</tr>
 			<tr>
 				<td>나이</td>
-				<td>${member.age}</td>
+				<td>${user.age}</td>
 			</tr>
 
 			<tr>
 				<td>성별</td>
-				<td>${member.gender}</td>
+				<td>${user.gender}</td>
 			</tr>
 
 			<tr>

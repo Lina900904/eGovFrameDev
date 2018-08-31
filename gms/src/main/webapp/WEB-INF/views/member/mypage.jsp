@@ -18,23 +18,29 @@
 		<div class="collapse navbar-collapse"
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-			
 
-				<li id="loginBut"><a class="page-scroll">Login</a></li>
-				<li id="joinBut"><a class="page-scroll">회원가입</a></li>
+				<li id="mypageBut"><a class="page-scroll"> 
+				${user.name} 로그인 중 </a></li>
+				<li><input type="hidden" id="session"  /></li>
+			
+				<li id="loginBut"><a class="page-scroll">Logout</a></li>
+				<li><a id="board_write">게시글쓰기</a></li>
+				<li><a id="board_list">게시글목록</a></li>
+
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->
 	</div>
 </div>
 <script>
-$('#loginBut').click(function () {
-	location.href = '${context}/move/auth/member/login';
-});
 
-$('#joinBut').click(function () {
-		location.href ='${context}/move/auth/member/add';
-});
+	
+	$('#board_write').click(function () {
+		alert("board_write 클릭");
+	});
+	$('#board_list').click(function () {
+		alert("board_list 클릭");
+	});
+	</script>
 
 
-</script>

@@ -13,7 +13,7 @@ public interface MemberService {
 	    public List<?> search(Map<?, ?> p);
 	    public MemberDTO retrieve(MemberDTO m);
 	    public int count(Map<?, ?> p) ;
-	    public void modify(Map<?, ?> p) ;
-	    public void remove(Map<?, ?> p) ;
+	    public void modify(MemberDTO p) ;
+	    public void remove(MemberDTO p) ;
 	    public boolean login(MemberDTO m);
 }
